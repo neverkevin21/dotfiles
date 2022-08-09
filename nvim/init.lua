@@ -1,0 +1,17 @@
+require "keymaps"
+require "options"
+require "plugins"
+
+require "conf.nvimtree"
+require "conf.bufferline"
+require "conf.telescope"
+require "conf.treesitter"
+require "conf.lsp"
+require "conf.cmp"
+require "conf.dap"
+require "conf.lualine"
+require "conf.neotest"
+require "conf.go"
+require "conf.python"
+require "conf.rust"
+
