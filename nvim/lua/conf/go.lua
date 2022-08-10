@@ -1,10 +1,13 @@
 local lspconfig = require('lspconfig')
 local util = require("lspconfig/util")
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 lspconfig.gopls.setup {
     filetype = {"go", "gomod"},
     capabilities = capabilities,
-    root_dir = util.root_pattern("go.work", "go.mod"),
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     setting = {
         gopls = {
             experimentalWorkspaceModule = true,
@@ -20,13 +23,13 @@ require('go').setup({
   go='go', -- go command, can be go[default] or go1.18beta1
   goimport='gopls', -- goimport command, can be gopls[default] or goimport
   fillstruct = 'gopls', -- can be nil (use fillstruct, slower) and gopls
-  gofmt = 'gofumpt', --gofmt cmd,
+  gofmt = 'gopls', --gofmt cmd,
   max_line_len = 128, -- max line length in golines format, Target maximum line length for golines
   tag_transform = false, -- can be transform option("snakecase", "camelcase", etc) check gomodifytags for details and more options
   gotests_template = "", -- sets gotests -template parameter (check gotests for details)
   gotests_template_dir = "", -- sets gotests -template_dir parameter (check gotests for details)
   comment_placeholder = '' ,  -- comment_placeholder your cool placeholder e.g. ﳑ       
-  icons = {breakpoint = '🧘', currentpos = '🏃'},  -- setup to `false` to disable icons setup
+  icons = false,
   verbose = false,  -- output loginf in messages
   lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
                    -- false: do nothing

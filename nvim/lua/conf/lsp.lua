@@ -11,7 +11,6 @@ lsp_installer.setup({
     }
 })
 
-
 require("lsp_signature").setup({
     bind = true,
     handler_opts = {

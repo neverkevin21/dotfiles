@@ -3,7 +3,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', "~/.config/nvim/plugged")
 
 Plug 'folke/tokyonight.nvim'
-Plug 'joshdick/onedark.vim'
 
 Plug('tzachar/cmp-tabnine', { ['do'] = './install.sh' })
 Plug 'hrsh7th/cmp-nvim-lua'
@@ -64,6 +63,7 @@ Plug 'ray-x/guihua.lua'
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 Plug 'simrat39/rust-tools.nvim'
 

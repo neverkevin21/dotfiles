@@ -21,14 +21,14 @@ keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gk", ":lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "gt", ":lua vim.lsp.buf.type_definition()<CR>", opts)
-keymap("n", "<space>a", ":lua vim.lsp.buf.code_aciton()<CR>", opts)
+keymap("n", "<space>a", ":lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "gi", ":Telescope lsp_implementations<CR>", opts)
 keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<space>o", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 
-keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev", opts)
-keymap("n", "<space>]", ":lua vim.diagnostic.goto_next", opts)
+keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
+keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
 
 -- dap
 keymap("n", "<leader><leader>b", ":lua require('dap').toggle_breakpoint()<CR>", opts)
@@ -58,4 +58,3 @@ keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>p", ":Telescope commands<CR>", opts)
 keymap("n", "<leader>c", ":Telescope command_history<CR>", opts)
 keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
-

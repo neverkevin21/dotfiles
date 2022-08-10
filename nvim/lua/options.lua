@@ -1,6 +1,7 @@
 local options = {
     nu = true,
     wildmenu = true,
+    wrap = false,
     smartindent = true,
     expandtab = true,
     cindent = true,
@@ -32,3 +33,6 @@ vim.cmd "let g:go_highlight_fields = 1"
 vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType rust nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
+
+-- run GoFmt on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)

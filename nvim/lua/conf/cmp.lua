@@ -30,8 +30,8 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        { name = 'luasnip' },
-        { name = 'path' },
+        -- { name = 'luasnip' },
+        -- { name = 'path' },
         { name = 'buffer' },
         -- { name = 'cmdline' },
         -- { name = 'cmd_tabnine' },
