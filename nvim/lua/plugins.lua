@@ -3,7 +3,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', "~/.config/nvim/plugged")
 
 Plug 'folke/tokyonight.nvim'
-Plug('catppuccin/nvim', { as = 'catppuccin' })
 Plug 'joshdick/onedark.vim'
 
 Plug('tzachar/cmp-tabnine', { ['do'] = './install.sh' })

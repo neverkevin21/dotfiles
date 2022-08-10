@@ -1,6 +1,6 @@
-require "keymaps"
-require "options"
 require "plugins"
+require "options"
+require "keymaps"
 
 require "conf.nvimtree"
 require "conf.bufferline"
