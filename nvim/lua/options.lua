@@ -34,5 +34,14 @@ vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition(
 vim.cmd "au FileType rust nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 
+vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
+vim.cmd "au FileType go nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
+
+vim.cmd "au FileType rust nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
+vim.cmd "au FileType rust nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
+
+vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
+vim.cmd "au FileType python nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
+
 -- run GoFmt on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
