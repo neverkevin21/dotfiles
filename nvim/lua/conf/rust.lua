@@ -5,7 +5,6 @@ require('rust-tools').setup({
     capabilities = capabilities,
     tools = {
         autoSetHints = true,
-        hover_with_actions = true,
         runnables = {
             use_telescope = true
         },
