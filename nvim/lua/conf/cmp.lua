@@ -46,5 +46,5 @@ cmp.setup {
                 return vim_item
             end
         })
-    },
+    }
 }

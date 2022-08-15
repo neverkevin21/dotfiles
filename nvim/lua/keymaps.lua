@@ -58,3 +58,4 @@ keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>p", ":Telescope commands<CR>", opts)
 keymap("n", "<leader>c", ":Telescope command_history<CR>", opts)
 keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+

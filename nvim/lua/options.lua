@@ -30,9 +30,6 @@ vim.cmd "let g:go_highlight_function_parameters = 1"
 vim.cmd "let g:go_highlight_function_calls = 1"
 vim.cmd "let g:go_highlight_fields = 1"
 
-vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
-vim.cmd "au FileType rust nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
-vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 
 vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType go nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
@@ -42,6 +39,10 @@ vim.cmd "au FileType rust nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition
 
 vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType python nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
+
+
+vim.cmd "au FileType rust nnoremap <leader>r :RustRun<CR>"
+vim.cmd "au FileType go nnoremap <leader>r :GoRun<CR>"
 
 -- run GoFmt on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
