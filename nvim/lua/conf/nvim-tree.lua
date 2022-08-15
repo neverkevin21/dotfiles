@@ -7,7 +7,8 @@ nvim_tree.setup({
     update_cwd = false,
     update_focused_file = {
         enable = true,
-        update_cwd = true,
+        update_root = false,
+        update_cwd = false,
     },
     filters = {
         dotfiles = true,
@@ -31,7 +32,7 @@ nvim_tree.setup({
     actions = {
         open_file = {
             resize_window = true,
-            quit_on_open = true,
+            quit_on_open = false,
         },
     },
     system_open = {
