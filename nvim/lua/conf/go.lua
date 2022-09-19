@@ -7,6 +7,9 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 lspconfig.gopls.setup {
     filetype = {"go", "gomod"},
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        require "lsp_signature".on_attach()
+    end,
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     setting = {
         gopls = {
