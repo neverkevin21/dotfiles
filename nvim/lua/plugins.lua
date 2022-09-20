@@ -57,8 +57,9 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
 
--- Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 -- Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
 -- Debug
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
