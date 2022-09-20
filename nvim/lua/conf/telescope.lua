@@ -1,4 +1,5 @@
-telescope = require'telescope'
+local telescope = require("telescope")
+
 telescope.setup({
     defaults = {
         initial_mode = "insert",
@@ -6,7 +7,6 @@ telescope.setup({
         },
     },
     file_ignore_patterns = {
-        "./vendor"
     },
     pickers = {
         find_files = {
@@ -15,3 +15,5 @@ telescope.setup({
     extensions = {
     },
 })
+
+telescope.load_extension("ui-select")
