@@ -4,6 +4,7 @@ require "keymaps"
 
 require "conf.bufferline"
 require "conf.cmp"
+require "conf.luasnip"
 require "conf.dap"
 require "conf.go"
 require "conf.lsp"
