@@ -1,11 +1,14 @@
 require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/nvim/snippets/" } }
 
-local luasnip = require "luasnip"
-local funcNode = luasnip.function_node
+local ls = require("luasnip")
+local s = ls.s
+local sn = ls.sn
+local t = ls.t
+local i = ls.i
+local f = ls.f
+local c = ls.c
+local d = ls.d
+local funcNode = ls.function_node
 local postfix = require("luasnip.extras.postfix").postfix
 
-postfix(".br", {
-    funcNode(function (_, parent)
-        return "[" .. parent.snippet.env.POSTFIX_MATCH .. "]"
-    end, {}),
-})
+-- TODO: add postfix snippets
