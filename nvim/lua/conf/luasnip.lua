@@ -35,5 +35,7 @@ ls.add_snippets(nil, {
         --         return "[" .. parent.snippet.env.POSTFIX_MATCH .. "]"
         --     end, {}),
         -- }),
+    },
+    go = {
     }
 })
