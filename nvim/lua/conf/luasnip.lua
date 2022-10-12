@@ -8,7 +8,32 @@ local i = ls.i
 local f = ls.f
 local c = ls.c
 local d = ls.d
-local funcNode = ls.function_node
+
 local postfix = require("luasnip.extras.postfix").postfix
 
--- TODO: add postfix snippets
+
+ls.add_snippets(nil, {
+    lua = {
+        ls.snippet({
+            trig = "luasnippet",
+            namr = "luasnippet",
+            decr = "Lua snippet."
+        }, {
+            ls.text_node({'ls.snippet({'}),
+            ls.text_node({'', '\ttrig = "'}), ls.insert_node(1, 'trigname'), ls.text_node({'",'}),
+            ls.text_node({'', '\tnamr = "'}), ls.insert_node(2, 'name,'), ls.text_node({'",'}),
+            ls.text_node({'', '\tdecr = "'}), ls.insert_node(3, 'desc,'), ls.text_node({'"'}),
+            ls.text_node({'', '}, {'}),
+            ls.text_node({'', '\t'}), ls.insert_node(4, ''),
+            ls.text_node({'', '})'}),
+        })
+    },
+    all = {
+        -- postfix Example:
+        -- postfix(".br", {
+        --     f(function(_, parent)
+        --         return "[" .. parent.snippet.env.POSTFIX_MATCH .. "]"
+        --     end, {}),
+        -- }),
+    }
+})
