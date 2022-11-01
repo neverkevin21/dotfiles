@@ -28,7 +28,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'rafamadriz/friendly-snippets'
 
 Plug 'onsails/lspkind-nvim'
--- 插入模式函数签名
+
 Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'williamboman/nvim-lsp-installer'

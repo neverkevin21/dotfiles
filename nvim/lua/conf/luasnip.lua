@@ -21,8 +21,8 @@ ls.add_snippets(nil, {
         }, {
             ls.text_node({'ls.snippet({'}),
             ls.text_node({'', '\ttrig = "'}), ls.insert_node(1, 'trigname'), ls.text_node({'",'}),
-            ls.text_node({'', '\tnamr = "'}), ls.insert_node(2, 'name,'), ls.text_node({'",'}),
-            ls.text_node({'', '\tdecr = "'}), ls.insert_node(3, 'desc,'), ls.text_node({'"'}),
+            ls.text_node({'', '\tnamr = "'}), ls.insert_node(2, 'name'), ls.text_node({'",'}),
+            ls.text_node({'', '\tdecr = "'}), ls.insert_node(3, 'desc'), ls.text_node({'"'}),
             ls.text_node({'', '}, {'}),
             ls.text_node({'', '\t'}), ls.insert_node(4, ''),
             ls.text_node({'', '})'}),
@@ -36,6 +36,4 @@ ls.add_snippets(nil, {
         --     end, {}),
         -- }),
     },
-    go = {
-    }
 })
