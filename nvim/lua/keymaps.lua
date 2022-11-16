@@ -27,8 +27,10 @@ keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<space>o", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 
+-- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
+keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
 -- dap
 keymap("n", "<leader><leader>b", ":lua require('dap').toggle_breakpoint()<CR>", opts)
