@@ -21,7 +21,6 @@ end
 
 
 vim.cmd "map <S-Tab> <"
-vim.cmd "colorscheme tokyonight"
 
 vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
 vim.cmd "au FileType go nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"

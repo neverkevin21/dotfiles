@@ -21,3 +21,6 @@ require "conf.tokyonight"
 require "conf.which_key"
 require "conf.comment"
 require "conf.zenmode"
+
+
+vim.cmd "colorscheme tokyonight-storm"
