@@ -21,6 +21,7 @@ telescope.setup({
         },
         mappings = {
         },
+        path_display = { "smart" },
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = {
