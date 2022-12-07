@@ -70,8 +70,16 @@ lspconfig.pylsp.setup{
         require "lsp_signature".on_attach()
     end,
     settings = {
+        configurationSources = {"flake8"},
+        formatCommand = {"black"},
         pylsp = {
             plugins = {
+                black = {
+                    enabled = true,
+                    cache_config = true,
+                    line_length = 99,
+                    preview = true,
+                },
                 pycodestyle = {
                     ignore = {'W391'},
                     maxLineLength = 100

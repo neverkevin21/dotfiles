@@ -26,6 +26,7 @@ keymap("n", "gi", ":Telescope lsp_implementations<CR>", opts)
 keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<space>o", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
+keymap("n", "<space>=", ":lua vim.lsp.buf.formatting()<CR>", opts)
 
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)

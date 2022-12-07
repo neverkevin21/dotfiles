@@ -78,8 +78,6 @@ Plug 'nvim-neotest/neotest-go'
 
 Plug 'numToStr/Comment.nvim'
 
-Plug 'nvie/vim-flake8'
-
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'voldikss/vim-floaterm'
