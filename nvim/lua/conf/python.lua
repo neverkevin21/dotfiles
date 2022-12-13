@@ -61,9 +61,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- 	},
 -- }
 
--- pip install python-lsp-server
--- pip install flake8
--- pip install pylsp-rope
+-- pip install 'python-lsp-server[all]'
 lspconfig.pylsp.setup{
     capabilities = capabilities,
     on_attach = function(client, bufnr)
