@@ -19,19 +19,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-
-vim.cmd "map <S-Tab> <"
-
-vim.cmd "au FileType go nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
-vim.cmd "au FileType go nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
-
-vim.cmd "au FileType rust nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
-vim.cmd "au FileType rust nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
-
-vim.cmd "au FileType python nnoremap <leader>v :vsp <CR>:lua vim.lsp.buf.definition()<CR>"
-vim.cmd "au FileType python nnoremap <leader>s :sv <CR>:lua vim.lsp.buf.definition()<CR>"
-
-
 vim.cmd "au FileType rust nnoremap <leader>r :RustRun<CR>"
 vim.cmd "au FileType go nnoremap <leader>r :GoRun<CR>"
 
