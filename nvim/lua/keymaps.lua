@@ -4,14 +4,6 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 local keymap = vim.api.nvim_set_keymap
-keymap('n', 'c-j', '<c-w>j', opts)
-keymap('n', 'c-k', '<c-w>k', opts)
-keymap('n', 'c-h', '<c-w>h', opts)
-keymap('n', 'c-l', '<c-w>l', opts)
-
--- symbols-outline
-keymap('n', '<F4>', ':SymbolsOutline<CR>', opts)
-
 -- copy to system clipboard
 keymap('v', '"+y', ':w !pbcopy<CR>', opts)
 keymap('n', '"+p', ':r !pbpaste<CR>', opts)
