@@ -29,18 +29,18 @@ ls.add_snippets(nil, {
         })
     },
     go = {
-        ls.snippet({
-            trig = "pln",
-            namr = "fmt.Println",
-            decr = "fmt.Println"
-        }, {
-            ls.text_node({ 'fmt.Println(' }), ls.insert_node(1, ''), ls.text_node({ ")" })
-        }),
-        postfix(".pln", {
-            f(function (_, parent)
-                return "fmt.Printf(\"" .. parent.snippet.env.POSTFIX_MATCH ..": %v" .. "\n\")"
-            end)
-        })
+        -- ls.snippet({
+        --     trig = "pln",
+        --     namr = "fmt.Println",
+        --     decr = "fmt.Println"
+        -- }, {
+        --     ls.text_node({ 'fmt.Println(' }), ls.insert_node(1, ''), ls.text_node({ ")" })
+        -- }),
+        -- postfix(".pln", {
+        --     f(function (_, parent)
+        --         return "fmt.Printf(\"" .. parent.snippet.env.POSTFIX_MATCH ..": %v" .. "\n\")"
+        --     end)
+        -- })
     },
     all = {
         -- postfix Example:

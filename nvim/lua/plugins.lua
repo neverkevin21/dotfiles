@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', "~/.config/nvim/plugged")
 
 Plug 'folke/tokyonight.nvim'
+Plug('tjdevries/colorbuddy.nvim', { ['branch'] = 'dev' })
 
 Plug('tzachar/cmp-tabnine', { ['do'] = './install.sh' })
 Plug 'hrsh7th/cmp-nvim-lua'
@@ -24,6 +25,7 @@ Plug 'hrsh7th/vim-vsnip'
 -- cmp Path completion
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 -- See hrsh7th other plugins for more great completion sources!
 Plug 'rafamadriz/friendly-snippets'
 
@@ -35,13 +37,14 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'folke/zen-mode.nvim'
+Plug 'folke/todo-comments.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'puremourning/vimspector'
 
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
 Plug 'moll/vim-bbye'
 Plug 'akinsho/bufferline.nvim'
@@ -78,7 +81,7 @@ Plug 'nvim-neotest/neotest-go'
 
 Plug 'numToStr/Comment.nvim'
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 
 Plug 'voldikss/vim-floaterm'
 vim.call('plug#end')
