@@ -15,7 +15,7 @@ require("lsp_signature").setup({
     bind = true,
     handler_opts = {
         border = "rounded"
-        },
+    },
     floating_window = true,
     toggle_key = "<C-j>",
     hint_enable = false,
@@ -24,12 +24,11 @@ require("lsp_signature").setup({
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
+    vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
-      spacing = 4,
-      prefix = ''
+        spacing = 4,
+        prefix = ''
     }
-  }
-)
+})

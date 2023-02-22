@@ -46,7 +46,7 @@ cmp.setup {
     }),
     sources = cmp.config.sources {
         { name = 'vsnip', priority = 4 },
-        { name = 'nvim_lsp_signature_help', priority = 3 },
+        -- { name = 'nvim_lsp_signature_help', priority = 3 },
         { name = "nvim_lsp", priority = 3 },
         { name = "buffer", priority = 2 },
         { name = 'path', priority = 1 },
