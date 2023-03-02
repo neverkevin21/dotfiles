@@ -28,8 +28,8 @@ cmp.setup {
                 -- they way you will only jump inside the snippet region
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
+                -- elseif has_words_before() then
+                --     cmp.complete()
             else
                 fallback()
             end
@@ -51,7 +51,7 @@ cmp.setup {
         { name = "buffer", priority = 2 },
         { name = 'path', priority = 1 },
         -- { name = "nvim_lua", priority = 1 },
-        -- { name = 'cmdline' },
+        { name = 'cmdline', priority = 1 },
         -- { name = 'luasnip', priority = 2 },
         -- { name = 'nvim_lsp' },
         -- { name = 'cmd_tabnine' },
@@ -67,11 +67,37 @@ cmp.setup {
         })
     },
     view = {
-        entries = { name = 'custom' }
+        -- entries = { name = 'custom' }
     },
 }
 
+-- nvim-autopairs
 cmp.event:on(
     'confirm_done',
     cmp_autopairs.on_confirm_done()
 )
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources(
+        {
+            { name = 'path' }
+        },
+        {
+            {
+                name = 'cmdline',
+                option = {
+                    ignore_cmds = { 'Man', '!' }
+                }
+            }
+        })
+})
