@@ -23,6 +23,7 @@ lspconfig.gopls.setup {
                 shadow = true,
             },
             staticcheck = true,
+            env = { GOFLAGS = "-tags=integration" }
         },
     }
 }
