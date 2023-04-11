@@ -21,6 +21,7 @@ keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
 
 keymap("n", "<leader>v", ":vsp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "<leader>s", ":sp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
@@ -67,3 +68,11 @@ keymap("n", "<space>t", ":TodoTelescope<CR>", opts)
 -- vim.keymap.set({ "i", "s" }, "<c-k>", function()
 --     require("luasnip").jump(-1)
 -- end, opts)
+--
+
+-- replace world under the cursor
+keymap("n", "<leader>j", "*``cgn", opts)
+
+-- copilot
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_no_tab_map = true
