@@ -8,7 +8,6 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 -- nvim-snip setup
 local cmp = require 'cmp'
 
-
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -45,16 +44,15 @@ cmp.setup {
         end, { "i", "s" }),
     }),
     sources = cmp.config.sources {
-        { name = 'vsnip', priority = 4 },
-        -- { name = 'nvim_lsp_signature_help', priority = 3 },
-        { name = "nvim_lsp", priority = 3 },
-        { name = "buffer", priority = 2 },
-        { name = 'path', priority = 1 },
-        -- { name = "nvim_lua", priority = 1 },
-        { name = 'cmdline', priority = 1 },
-        -- { name = 'luasnip', priority = 2 },
-        -- { name = 'nvim_lsp' },
-        -- { name = 'cmd_tabnine' },
+        { name = "nvim_lsp", keyword_lenght = 1 },
+        { name = "vsnip", keyword_lenght = 2 },
+        { name = "buffer", keyword_lenght = 3 },
+        { name = 'path', keyword_lenght = 2 },
+
+        -- { name = 'vsnip', priority = 4 },
+        -- { name = "nvim_lsp", priority = 3 },
+        -- { name = "buffer", priority = 2 },
+        -- { name = 'cmdline', priority = 1 },
     },
     formatting = {
         format = lspkind.cmp_format({
