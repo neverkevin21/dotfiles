@@ -47,7 +47,7 @@ Plug 'puremourning/vimspector'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
 Plug 'moll/vim-bbye'
-Plug 'akinsho/bufferline.nvim'
+Plug('akinsho/bufferline.nvim', { ['tag'] = 'v3.*' })
 
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -63,7 +63,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
 
-Plug 'fatih/vim-go'
+-- Plug 'fatih/vim-go'
 -- Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 -- Debug
