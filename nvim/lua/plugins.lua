@@ -45,6 +45,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'puremourning/vimspector'
 
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 Plug 'moll/vim-bbye'
 Plug('akinsho/bufferline.nvim', { ['tag'] = 'v3.*' })
