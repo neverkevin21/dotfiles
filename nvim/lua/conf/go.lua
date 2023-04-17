@@ -31,7 +31,8 @@ lspconfig.gopls.setup {
 require('go').setup({
     goimport = "gopls", -- if set to 'gopls' will use gopls format, also goimport
     fillstruct = "gopls",
-    gofmt = "gopls", -- if set to gopls will use gopls format
+    -- gofmt = "gopls", -- if set to gopls will use gopls format
+    gofmt = "gofumpt",
     max_line_len = 120,
     tag_transform = false,
     test_dir = "",
