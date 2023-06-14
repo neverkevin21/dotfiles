@@ -23,6 +23,7 @@ keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
 keymap("n", "<leader>v", ":vsp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "<leader>s", ":sp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 
+
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
@@ -76,3 +77,9 @@ keymap("n", "<leader>j", "*``cgn", opts)
 -- copilot
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.g.copilot_no_tab_map = true
+
+
+keymap("t", "<ESC>", "<C-\\><C-n>", opts)
+
+vim.cmd "au FileType sql vmap = :!/usr/local/Cellar/pgformatter/5.2/bin/pg_format<CR>"
+

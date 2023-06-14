@@ -1,4 +1,4 @@
-require("tokyonight").setup({
+conf = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
     style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -21,17 +21,17 @@ require("tokyonight").setup({
     dim_inactive = false, -- dims inactive windows
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
-    --- You can override specific color groups to use other groups or a hex color
-    --- function will be called with a ColorScheme table
-    --- @param colors ColorScheme
+    -- You can override specific color groups to use other groups or a hex color
+    -- function will be called with a ColorScheme table
+    -- @param colors ColorScheme
     on_colors = function(colors)
         -- colors.comment = colors.dark5
         colors.comment = colors.dark5
     end,
 
-    --- You can override specific highlights to use other groups or a hex color
-    --- function will be called with a Highlights and ColorScheme table
-    ---@param highlights Highlights
-    ---@param colors ColorScheme
+    -- You can override specific highlights to use other groups or a hex color
+    -- function will be called with a Highlights and ColorScheme table
+    -- @param highlights Highlights
+    -- @param colors ColorScheme
     on_highlights = function(highlights, colors) end,
-})
+}

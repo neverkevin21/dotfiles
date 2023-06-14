@@ -20,7 +20,7 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "au FileType rust nnoremap <leader>r :RustRun<CR>"
-vim.cmd "au FileType go nnoremap <leader>r :GoRun<CR>"
+vim.cmd "au FileType go nnoremap <leader>r :GoRun %<CR>"
 
 -- run GoFmt on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)

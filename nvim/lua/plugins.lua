@@ -4,7 +4,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme tokyonight]])
+            -- vim.cmd([[colorscheme tokyonight]])
         end
     },
     {
@@ -33,6 +33,13 @@ require("lazy").setup({
                 },
             })
             -- vim.cmd([[colorscheme dracula]])
+        end
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function()
+            vim.cmd([[colorscheme catppuccin-macchiato]])
         end
     },
     {
@@ -125,12 +132,8 @@ require("lazy").setup({
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap"
     },
-    {
-        "github/copilot.vim",
-    },
-    {
-        "simrat39/rust-tools.nvim"
-    }
+    "github/copilot.vim",
+    "simrat39/rust-tools.nvim",
 })
 
 -- local Plug = vim.fn['plug#']
