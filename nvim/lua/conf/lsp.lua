@@ -4,16 +4,6 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { "jsonls", "html", "yamlls", "taplo", "lua_ls" }
-for _, ls in ipairs(servers) do
-    lspconfig[ls].setup {
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-            require "lsp_signature".on_attach()
-        end,
-    }
-end
-
 require("mason").setup({
     automatic_installation = true,
     ui = {
@@ -24,6 +14,19 @@ require("mason").setup({
         }
     }
 })
+
+require("mason-lspconfig").setup()
+
+local servers = { "jsonls", "html", "yamlls", "taplo", "lua_ls" }
+for _, ls in ipairs(servers) do
+    lspconfig[ls].setup {
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+            require "lsp_signature".on_attach()
+        end,
+    }
+end
+
 
 require("lsp_signature").setup({
     bind = true,
