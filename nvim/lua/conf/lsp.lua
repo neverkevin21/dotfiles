@@ -24,11 +24,12 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "bashls",
         "cssls",
-        "vimls"
+        "vimls",
+        "tsserver",
     }
 })
 
-local servers = { "jsonls", "html", "yamlls", "taplo", "lua_ls", "bashls", "cssls", "vimls" }
+local servers = { "jsonls", "html", "yamlls", "taplo", "lua_ls", "bashls", "cssls", "vimls", "tsserver"}
 for _, ls in ipairs(servers) do
     lspconfig[ls].setup {
         capabilities = capabilities,

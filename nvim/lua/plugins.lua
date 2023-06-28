@@ -57,6 +57,7 @@ require("lazy").setup({
     "golang/vscode-go",
     "hrsh7th/vim-vsnip-integ",
     "hrsh7th/cmp-nvim-lsp-signature-help",
+    "lukas-reineke/cmp-under-comparator",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind-nvim",
     "ray-x/lsp_signature.nvim",
