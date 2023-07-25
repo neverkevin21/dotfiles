@@ -48,7 +48,7 @@ require('go').setup({
     lsp_on_attach = nil, -- nil: do nothing
     -- if lsp_on_attach is a function: use this function as on_attach function for gopls,
     -- when lsp_cfg is true
-    lsp_keymaps = true, -- true: apply default lsp keymaps
+    lsp_keymaps = true,   -- true: apply default lsp keymaps
     lsp_codelens = true,
     lsp_diag_hdlr = true, -- hook lsp diag handler
     lsp_inlay_hints = {
@@ -98,11 +98,11 @@ require('go').setup({
     dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
     -- false: do not use keymap in go/dap.lua.  you must define your own.
     -- windows: use visual studio style of keymap
-    dap_vt = true, -- false, true and 'all frames'
+    dap_vt = true,          -- false, true and 'all frames'
     textobjects = true,
-    gopls_cmd = nil, --- you can provide gopls path and cmd if it not in PATH, e.g. cmd = {  "/home/ray/.local/nvim/data/lspinstall/go/gopls" }
-    build_tags = "", --- you can provide extra build tags for tests or debugger
-    test_runner = "go", -- one of {`go`, `richgo`, `dlv`, `ginkgo`}
+    gopls_cmd = nil,        --- you can provide gopls path and cmd if it not in PATH, e.g. cmd = {  "/home/ray/.local/nvim/data/lspinstall/go/gopls" }
+    build_tags = "",        --- you can provide extra build tags for tests or debugger
+    test_runner = "go",     -- one of {`go`, `richgo`, `dlv`, `ginkgo`}
     run_in_floaterm = true, -- set to true to run in float window.
-    luasnip = false, -- set true to enable included luasnip
+    luasnip = false,        -- set true to enable included luasnip
 })

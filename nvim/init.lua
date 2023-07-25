@@ -17,7 +17,7 @@ require "keymaps"
 
 require "conf.bufferline"
 require "conf.cmp"
-require "conf.luasnip"
+-- require "conf.luasnip"
 require "conf.dap"
 require "conf.go"
 require "conf.lsp"
@@ -37,5 +37,3 @@ require "conf.zenmode"
 require "conf.todo-comments"
 require "conf.auto-pairs"
 
-
--- vim.cmd "colorscheme tokyonight-storm"

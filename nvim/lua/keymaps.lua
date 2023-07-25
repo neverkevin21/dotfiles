@@ -8,6 +8,16 @@ local keymap = vim.api.nvim_set_keymap
 keymap('v', '"+y', ':w !pbcopy<CR>', opts)
 keymap('n', '"+p', ':r !pbpaste<CR>', opts)
 
+-- better indenting
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
+-- Resize window using <ctrl> arrow keys
+keymap("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
 -- lsp keymaps
 keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
@@ -22,7 +32,6 @@ keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
 
 keymap("n", "<leader>v", ":vsp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "<leader>s", ":sp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
-
 
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
@@ -40,6 +49,7 @@ keymap("n", "<leader><leader>so", ":lua require('dap').step_over()<CR>", opts)
 keymap("n", "<space>tw", ":lua require('neotest').summary.toggle()<CR>", opts)
 keymap("n", "<space>tf", ":lua require('neotest').run.run()<CR>", opts)
 keymap("n", "<space>to", ":lua require('neotest').output.open({ enter = true })()<CR>", opts)
+
 
 -- floaterm
 keymap("n", "<leader>t", ":FloatermToggle<CR>", opts)

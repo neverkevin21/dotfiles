@@ -2,7 +2,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspkind = require("lspkind")
-local luasnip = require("luasnip")
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 -- nvim-snip setup
@@ -11,8 +10,8 @@ local cmp = require 'cmp'
 cmp.setup {
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
-            -- vim.fn["vsnip#anonymous"](args.body)
+            -- luasnip.lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -20,34 +19,12 @@ cmp.setup {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-e>"] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                -- they way you will only jump inside the snippet region
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-                -- elseif has_words_before() then
-                --     cmp.complete()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
     }),
     sources = cmp.config.sources {
-        { name = "nvim_lsp", keyword_lenght = 1 },
-        { name = "vsnip", keyword_lenght = 2 },
-        { name = "buffer", keyword_lenght = 3 },
-        { name = 'path', keyword_lenght = 2 },
+        { name = "nvim_lsp" },
+        { name = "vsnip" },
+        { name = "buffer" },
+        { name = 'path' },
 
         -- { name = 'vsnip', priority = 4 },
         -- { name = "nvim_lsp", priority = 3 },
@@ -111,3 +88,4 @@ cmp.setup.cmdline(':', {
             }
         })
 })
+
