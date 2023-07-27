@@ -92,4 +92,3 @@ vim.g.copilot_no_tab_map = true
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 
 vim.cmd "au FileType sql vmap = :!/usr/local/Cellar/pgformatter/5.2/bin/pg_format<CR>"
-
