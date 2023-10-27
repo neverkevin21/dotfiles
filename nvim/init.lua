@@ -35,5 +35,4 @@ require "conf.which_key"
 require "conf.comment"
 require "conf.zenmode"
 require "conf.todo-comments"
-require "conf.auto-pairs"
 

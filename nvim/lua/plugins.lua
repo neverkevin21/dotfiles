@@ -140,14 +140,19 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
         },
-        config = function()
-            require("go").setup()
-        end,
+        -- config = function()
+        --     require("go").setup()
+        -- end,
         event = { "CmdlineEnter" },
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    "windwp/nvim-autopairs",
+    {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup()
+        end,
+    },
     "voldikss/vim-floaterm",
     "numToStr/Comment.nvim",
     "nvim-lualine/lualine.nvim",
