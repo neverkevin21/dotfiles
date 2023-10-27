@@ -154,7 +154,21 @@ require("lazy").setup({
         end,
     },
     "voldikss/vim-floaterm",
-    "numToStr/Comment.nvim",
+    {
+        "numToStr/Comment.nvim",
+        config = function ()
+            require("Comment").setup({
+                toggler = {
+                    line = "<C-/>",
+                    block = "<C-?>",
+                },
+                opleader = {
+                    line = "<C-/>",
+                    block = "<C-?>",
+                },
+            })
+        end
+    },
     "nvim-lualine/lualine.nvim",
     {
         "rcarriga/nvim-dap-ui",
