@@ -3,7 +3,7 @@ require("nvim-treesitter.install").command_extra_args = {
 }
 
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "go", "lua", "rust", "python", "yaml", "json", "proto", "bash", "vim" },
+    ensure_installed = { "go", "lua", "rust", "python", "yaml", "json", "proto", "bash", "vim", "http"},
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,

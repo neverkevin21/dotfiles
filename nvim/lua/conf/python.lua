@@ -80,8 +80,13 @@ lspconfig.pylsp.setup{
                 },
                 pycodestyle = {
                     ignore = {'W391'},
-                    maxLineLength = 100
-                }
+                    maxLineLength = 99
+                },
+                pylsp_mypy = { enabled = true },
+                jedi_completion = { fuzzy = true },
+                pyls_isort = {
+                    enabled = true,
+                },
             }
         }
     }

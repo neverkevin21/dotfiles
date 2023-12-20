@@ -25,6 +25,7 @@ telescope.setup({
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = {
+        "node_modules",
     },
     path_display = { "truncate" },
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
