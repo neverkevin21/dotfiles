@@ -156,7 +156,7 @@ require("lazy").setup({
     "voldikss/vim-floaterm",
     {
         "numToStr/Comment.nvim",
-        config = function ()
+        config = function()
             require("Comment").setup({
                 toggler = {
                     line = "<C-/>",
@@ -190,16 +190,35 @@ require("lazy").setup({
         opts = {},
         -- stylua: ignore
         keys = {
-            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-            { "S",     mode = { "n", "o", "x" }, function() require("flash").treesitter() end,        desc =
-            "Flash Treesitter" },
-            { "r",     mode = "o",               function() require("flash").remote() end,            desc =
-            "Remote Flash" },
-            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end,
-                                                                                                          desc =
-                "Treesitter Search" },
-            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc =
-            "Toggle Flash Search" },
+            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+            {
+                "S",
+                mode = { "n", "o", "x" },
+                function() require("flash").treesitter() end,
+                desc =
+                "Flash Treesitter"
+            },
+            {
+                "r",
+                mode = "o",
+                function() require("flash").remote() end,
+                desc =
+                "Remote Flash"
+            },
+            {
+                "R",
+                mode = { "o", "x" },
+                function() require("flash").treesitter_search() end,
+                desc =
+                "Treesitter Search"
+            },
+            {
+                "<c-s>",
+                mode = { "c" },
+                function() require("flash").toggle() end,
+                desc =
+                "Toggle Flash Search"
+            },
         },
         config = function()
             require("flash").setup()
@@ -212,6 +231,29 @@ require("lazy").setup({
             require("rest-nvim").setup({
                 --- Get the same options from Packer setup
             })
+        end
+    },
+    {
+        'mhartington/formatter.nvim',
+        config = function()
+            local util = require("formatter.util")
+            require("formatter").setup {
+                logging = true,
+                filetype = {
+                    ["*"] = {
+                        require("formatter.filetypes.any").remove_trailing_whitespace,
+                    },
+                    go = {
+                        function()
+                            return {
+                                exe = "gofumpt",
+                                args = { "-e" },
+                                stdin = true,
+                            }
+                        end,
+                    },
+                },
+            }
         end
     }
 })

@@ -21,6 +21,7 @@ end
 
 vim.cmd "au FileType rust nnoremap <leader>r :RustRun<CR>"
 vim.cmd "au FileType go nnoremap <leader>r :GoRun %<CR>"
+vim.cmd "au FileType python nnoremap <leader>r :!python %<CR>"
 
 vim.cmd "au FileType vue setlocal ts=2 sts=2 sw=2 expandtab"
 vim.cmd "au FileType js setlocal ts=2 sts=2 sw=2 expandtab"
