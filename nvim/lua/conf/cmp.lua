@@ -12,6 +12,7 @@ cmp.setup {
         expand = function(args)
             -- luasnip.lsp_expand(args.body)
             vim.fn["vsnip#anonymous"](args.body)
+            -- require'luasnip'.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -34,7 +35,7 @@ cmp.setup {
     formatting = {
         format = lspkind.cmp_format({
             with_text = true,
-            maxwidth = 50,
+            maxwidth = 60,
             before = function(entry, vim_item)
                 vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
                 return vim_item
@@ -88,4 +89,3 @@ cmp.setup.cmdline(':', {
             }
         })
 })
-
