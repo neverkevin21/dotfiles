@@ -62,7 +62,8 @@ keymap("n", "<leader>q", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>e", ":BufferLineCycleNext<CR>", opts)
 
 -- telescope
-keymap("n", "<C-f>", ":Telescope live_grep<CR>", opts)
+-- keymap("n", "<C-f>", ":Telescope live_grep<CR>", opts)
+keymap("n", "<C-f>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>p", ":Telescope commands<CR>", opts)
 keymap("n", "<leader>c", ":Telescope command_history<CR>", opts)

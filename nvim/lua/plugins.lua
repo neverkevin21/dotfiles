@@ -42,6 +42,7 @@ require("lazy").setup({
             vim.cmd([[colorscheme catppuccin-macchiato]])
         end
     },
+    "L3MON4D3/LuaSnip",
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -49,8 +50,10 @@ require("lazy").setup({
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
+            "saadparwaiz1/cmp_luasnip",
         },
     },
+    "saadparwaiz1/cmp_luasnip",
     "golang/vscode-go",
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
@@ -78,6 +81,10 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-symbols.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
+            {
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                version = "^1.0.0",
+            },
         },
         opts = function(_, opts)
             local function flash(prompt_bufnr)
@@ -255,5 +262,5 @@ require("lazy").setup({
                 },
             }
         end
-    }
+    },
 })
