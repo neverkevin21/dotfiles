@@ -62,32 +62,59 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- }
 
 -- pip install 'python-lsp-server[all]'
-lspconfig.pylsp.setup{
+lspconfig.pylsp.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         require "lsp_signature".on_attach()
     end,
     settings = {
-        configurationSources = {"flake8"},
-        formatCommand = {"black"},
+        formatCommand = { "black" },
         pylsp = {
+            -- configurationSources = {"flake8"},
+            -- plugins = {
+            --     black = {
+            --         enabled = true,
+            --         cache_config = true,
+            --         line_length = 150,
+            --         preview = true,
+            --     },
+            --     pycodestyle = {
+            --         ignore = {'W391'},
+            --         maxLineLength = 150
+            --     },
+            --     pylsp_mypy = { enabled = true },
+            --     jedi_completion = { fuzzy = true },
+            --     -- yapf = {
+            --     -- }
+            -- }
             plugins = {
+                -- formatter options
                 black = {
                     enabled = true,
                     cache_config = true,
-                    line_length = 99,
+                    line_length = 150,
                     preview = true,
                 },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                -- linter options
+                pylint = {
+                    enabled = false,
+                    args = {
+                    }
+                },
+                pyflakes = { enabled = false },
                 pycodestyle = {
-                    ignore = {'W391'},
-                    maxLineLength = 99
-                },
-                pylsp_mypy = { enabled = true },
-                jedi_completion = { fuzzy = true },
-                pyls_isort = {
                     enabled = true,
+                    maxLineLength = 300
                 },
-            }
+                -- type checker
+                pylsp_mypy = { enabled = true },
+                -- auto-completion options
+                jedi_completion = { fuzzy = true },
+                -- import sorting
+                pyls_isort = { enabled = true },
+            },
         }
     }
 }
