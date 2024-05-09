@@ -27,10 +27,15 @@ require("mason-lspconfig").setup({
         "vimls",
         "tsserver",
         "bufls",
+        "sqlls",
     }
 })
 
-local servers = { "jsonls", "html", "yamlls", "taplo", "lua_ls", "bashls", "cssls", "vimls", "tsserver", "bufls" }
+local servers = {
+    "jsonls", "html", "yamlls", "taplo",
+    "lua_ls", "bashls", "cssls", "vimls",
+    "tsserver", "bufls", "sqlls",
+}
 for _, ls in ipairs(servers) do
     lspconfig[ls].setup {
         capabilities = capabilities,
@@ -55,10 +60,10 @@ require("lsp_signature").setup({
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-        spacing = 4,
-        prefix = ''
-    }
-})
+        underline = true,
+        -- This sets the spacing and the prefix, obviously.
+        virtual_text = {
+            spacing = 4,
+            prefix = ''
+        }
+    })
