@@ -1,3 +1,7 @@
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local options = {
     nu = true,
     wildmenu = true,
@@ -12,7 +16,8 @@ local options = {
     splitright = true,
     showcmd = true,
     updatetime = 300,
-    clipboard = "unnamed"
+    clipboard = "unnamed",
+    termguicolors = true,
 }
 
 for k, v in pairs(options) do
