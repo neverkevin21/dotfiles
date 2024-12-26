@@ -1,11 +1,5 @@
 return {
 	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
-	},
-	{
 		"onsails/lspkind-nvim",
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
