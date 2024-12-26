@@ -40,41 +40,22 @@ keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
--- neotest
-keymap("n", "<space>tw", ":lua require('neotest').summary.toggle()<CR>", opts)
-keymap("n", "<space>tf", ":lua require('neotest').run.run()<CR>", opts)
-keymap("n", "<space>to", ":lua require('neotest').output.open({ enter = true })()<CR>", opts)
-
 -- floaterm
 keymap("n", "<leader>t", ":FloatermToggle<CR>", opts)
 
 -- nvim-tree
-keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
 
 -- BufferLine
 keymap("n", "<leader>q", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>e", ":BufferLineCycleNext<CR>", opts)
 
 -- telescope
--- keymap("n", "<C-f>", ":Telescope live_grep<CR>", opts)
 keymap("n", "<C-f>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>p", ":Telescope commands<CR>", opts)
-keymap("n", "<leader>c", ":Telescope command_history<CR>", opts)
 keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 keymap("n", "<space>t", ":TodoTelescope<CR>", opts)
-
--- luasnip
--- vim.keymap.set({ "i", "s" }, "<c-x>", function()
---     require("luasnip").expand_or_jump()
--- end, opts)
--- vim.keymap.set({ "i", "s" }, "<c-j>", function()
---     require("luasnip").jump(1)
--- end, opts)
--- vim.keymap.set({ "i", "s" }, "<c-k>", function()
---     require("luasnip").jump(-1)
--- end, opts)
---
 
 -- replace world under the cursor
 keymap("n", "<leader>j", "*``cgn", opts)
@@ -84,5 +65,3 @@ vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true,
 vim.g.copilot_no_tab_map = true
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
-
-vim.cmd("au FileType sql vmap = :!/usr/local/Cellar/pgformatter/5.2/bin/pg_format<CR>")
