@@ -40,13 +40,6 @@ keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
--- dap
-keymap("n", "<leader><leader>b", ":lua require('dap').toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader><leader>B", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<leader><leader>c", ":lua require('dap').continue()<CR>", opts)
-keymap("n", "<leader><leader>si", ":lua require('dap').step_into()<CR>", opts)
-keymap("n", "<leader><leader>so", ":lua require('dap').step_over()<CR>", opts)
-
 -- neotest
 keymap("n", "<space>tw", ":lua require('neotest').summary.toggle()<CR>", opts)
 keymap("n", "<space>tf", ":lua require('neotest').run.run()<CR>", opts)

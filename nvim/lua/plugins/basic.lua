@@ -306,6 +306,8 @@ return {
 		dependencies = { "luarocks.nvim" },
 		config = function()
 			require("rest-nvim").setup()
+            -- first load extension
+            require("telescope").load_extension("rest")
 		end,
 	},
 	{
