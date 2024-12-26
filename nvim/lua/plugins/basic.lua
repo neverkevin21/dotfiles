@@ -269,6 +269,10 @@ return {
 	},
 	{
 		"github/copilot.vim",
+		config = function()
+			vim.keymap.set("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+			vim.g.copilot_no_tab_map = true
+		end,
 	},
 	{
 		"NeogitOrg/neogit",

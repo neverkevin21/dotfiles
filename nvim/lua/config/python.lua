@@ -4,7 +4,7 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local maxLineLength = 99;
+local maxLineLength = 129;
 -- pip install 'python-lsp-server[all]' python-lsp-black python-lsp-isort
 lspconfig.pylsp.setup {
     capabilities = capabilities,

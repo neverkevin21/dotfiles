@@ -87,6 +87,20 @@ return {
 			pcall(require("telescope").load_extension, "ui-select")
 			pcall(require("telescope").load_extension, "live_grep_args")
 			pcall(require("telescope").load_extension, "rest")
+
+			local builtin = require("telescope.builtin")
+			local options = { silent = true }
+			vim.keymap.set(
+				"n",
+				"<C-f>",
+				":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+				options
+			)
+			vim.keymap.set("n", "<leader>b", builtin.buffers, opts)
+			vim.keymap.set("n", "<leader>p", builtin.commands, opts)
+			vim.keymap.set("n", "<leader>l", builtin.resume, opts)
+			vim.keymap.set("n", "<C-p>", builtin.find_files, opts)
+			vim.keymap.set("n", "<space>t", ":TodoTelescope<CR>", opts)
 		end,
 	},
 }

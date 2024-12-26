@@ -3,7 +3,7 @@ local opts = { silent = true }
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 -- copy to system clipboard
 keymap("v", '"+y', ":w !pbcopy<CR>", opts)
 keymap("n", '"+p', ":r !pbpaste<CR>", opts)
@@ -50,18 +50,7 @@ keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>q", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>e", ":BufferLineCycleNext<CR>", opts)
 
--- telescope
-keymap("n", "<C-f>", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
-keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>p", ":Telescope commands<CR>", opts)
-keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
-keymap("n", "<space>t", ":TodoTelescope<CR>", opts)
-
 -- replace world under the cursor
 keymap("n", "<leader>j", "*``cgn", opts)
-
--- copilot
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.g.copilot_no_tab_map = true
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
