@@ -66,6 +66,10 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("bufferline").setup()
+			vim.keymap.set("n", "<leader>q", ":BufferLineCyclePrev<CR>")
+			vim.keymap.set("n", "<leader>e", ":BufferLineCycleNext<CR>")
+			vim.keymap.set("n", "<leader>ws", ":BufferLinePick<CR>")
+			vim.keymap.set("n", "<leader>wd", ":BufferLinePickClose<CR>")
 		end,
 	},
 	{

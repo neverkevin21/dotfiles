@@ -46,10 +46,6 @@ keymap("n", "<leader>t", ":FloatermToggle<CR>", opts)
 -- nvim-tree
 keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
 
--- BufferLine
-keymap("n", "<leader>q", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<leader>e", ":BufferLineCycleNext<CR>", opts)
-
 -- replace world under the cursor
 keymap("n", "<leader>j", "*``cgn", opts)
 
