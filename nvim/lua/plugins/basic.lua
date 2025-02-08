@@ -272,13 +272,6 @@ return {
 		end,
 	},
 	{
-		"github/copilot.vim",
-		config = function()
-			vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-			vim.g.copilot_no_tab_map = true
-		end,
-	},
-	{
 		"NeogitOrg/neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- required
@@ -309,5 +302,24 @@ return {
 	},
 	{
 		"stevearc/dressing.nvim",
+	},
+	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		keys = {
+			{ "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
+			{ "<leader>cs", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Pictures" },
+		},
+		opts = {
+			save_path = "~/Pictures",
+			has_breadcrumbs = true,
+			bg_theme = "bamboo",
+		},
+		config = function()
+			require("codesnap").setup({
+				code_font_family = "Hack Nerd Font",
+				bg_padding = 0,
+			})
+		end,
 	},
 }

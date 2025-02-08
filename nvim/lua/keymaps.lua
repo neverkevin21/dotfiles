@@ -13,10 +13,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- resize window using <ctrl> arrow keys
-keymap("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-keymap("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-keymap("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-keymap("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+keymap("n", "<space><Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap("n", "<space><Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap("n", "<space><Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap("n", "<space><Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- lsp keymaps
 keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
@@ -38,6 +38,7 @@ keymap("n", "<leader>s", ":sp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
+keymap("n", "<space>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
 -- floaterm

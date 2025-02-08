@@ -28,7 +28,7 @@ nvim_tree.setup({
     },
     filters = {
         dotfiles = false,
-        custom = { 'node_modules' },
+        -- custom = { 'node_modules' },
     },
     view = {
         width = 35,
