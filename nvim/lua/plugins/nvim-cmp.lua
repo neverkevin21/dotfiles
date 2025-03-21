@@ -26,15 +26,15 @@ return {
 						"rafamadriz/friendly-snippets",
 						config = function()
 							require("luasnip.loaders.from_vscode").lazy_load()
-                            -- require("luasnip.loaders.from_vscode").lazy_load()
-                            require("luasnip.loaders.from_snipmate").load()
+							-- require("luasnip.loaders.from_vscode").lazy_load()
+							require("luasnip.loaders.from_snipmate").load()
 						end,
 					},
 				},
 			},
-            {
-			    "saadparwaiz1/cmp_luasnip",
-            },
+			{
+				"saadparwaiz1/cmp_luasnip",
+			},
 			"onsails/lspkind-nvim",
 			-- Adds other completion capabilities.
 			--  nvim-cmp does not ship with all sources by default. They are split
@@ -67,53 +67,41 @@ return {
 					["<C-p>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
-					-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<C-Space>"] = cmp.mapping.complete({}),
 
-					["<C-l>"] = cmp.mapping(function()
-						if luasnip.expand_or_locally_jumpable() then
-							luasnip.expand_or_jump()
-						end
-					end, { "i", "s" }),
-					["<C-h>"] = cmp.mapping(function()
-						if luasnip.locally_jumpable(-1) then
-							luasnip.jump(-1)
-						end
-					end, { "i", "s" }),
-
-					-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-					--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
-					--
-					["<CR>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							if luasnip.expandable() then
-								luasnip.expand()
-							else
-								cmp.confirm({
-									select = true,
-								})
-							end
-						else
-							fallback()
-						end
-					end),
+					-- ["<CR>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		if luasnip.expandable() then
+					-- 			luasnip.expand()
+					-- 		else
+					-- 			cmp.confirm({
+					-- 				select = true,
+					-- 			})
+					-- 		end
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end),
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
 
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.locally_jumpable(1) then
-							luasnip.jump(1)
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
+						elseif has_words_before() then
+							cmp.complete()
 						else
+							-- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 							fallback()
 						end
 					end, { "i", "s" }),
-
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.locally_jumpable(-1) then
+						elseif luasnip.jumpable(-1) then
 							luasnip.jump(-1)
 						else
 							fallback()
