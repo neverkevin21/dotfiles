@@ -28,7 +28,9 @@ keymap("n", "<leader>i", ":Telescope lsp_implementations<CR>", opts)
 keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<space>o", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
+
 keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
+keymap("n", "<leader>=", ":lua require('conform').format({})<CR>", opts)
 
 keymap("i", "<C-k>", ":lua vim.lsp.buf.completion()<CR>", opts)
 
