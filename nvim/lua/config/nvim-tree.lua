@@ -16,6 +16,8 @@ local function on_attach(bufnr)
 end
 
 nvim_tree.setup({
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     on_attach = on_attach,
     git = {
         enable = true,

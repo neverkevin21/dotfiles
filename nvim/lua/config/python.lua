@@ -50,13 +50,9 @@ lspconfig.pylsp.setup({
                     lineLength = maxLineLength,
                     select = { "I", "S", "E", "W", "F", "B", "SIM", "FAST", "PL", "G", "T20", },
                     format = { "I", "S", "E", "W", "F", "B", "SIM", "FAST", "PL", "G", "T20", },
-                    ignore = { "SIM110", "F401", "PLR2004"},
+                    ignore = { "SIM110", "F401", "PLR2004" },
                 },
             },
         },
     },
 })
-
-local lspconfig = require("lspconfig")
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
