@@ -20,11 +20,12 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "pylsp",
         "tsserver",
+        "html",
     },
 })
 
 local servers = {
-    "lua_ls",
+    "lua_ls", "html",
 }
 
 for _, ls in ipairs(servers) do
