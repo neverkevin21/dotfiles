@@ -50,7 +50,7 @@ lspconfig.pylsp.setup({
                     lineLength = maxLineLength,
                     select = { "I", "S", "E", "W", "F", "B", "SIM", "FAST", "PL", "G", "T20", },
                     format = { "I", "S", "E", "W", "F", "B", "SIM", "FAST", "PL", "G", "T20", },
-                    ignore = { "SIM110", "F401", "PLR2004" },
+                    ignore = { "SIM110", "F401", "PLR2004", "SIM103" },
                 },
             },
         },

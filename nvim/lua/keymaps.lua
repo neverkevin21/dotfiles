@@ -44,7 +44,8 @@ keymap("n", "<space>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
 -- floaterm
-keymap("n", "<leader>t", ":FloatermToggle<CR>", opts)
+keymap("n", "<C-j>", ":lua require('FTerm').toggle()<CR>", opts)
+keymap("t", "<C-j>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 -- nvim-tree
 keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
