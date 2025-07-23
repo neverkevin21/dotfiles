@@ -29,13 +29,16 @@ keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<space>o", ":Telescope lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>o", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
 
-keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
-keymap("n", "<leader>=", ":lua require('conform').format({})<CR>", opts)
-
-keymap("i", "<C-k>", ":lua vim.lsp.buf.completion()<CR>", opts)
+keymap("i", "<C-k>", function()
+	vim.lsp.completion.get()
+end, opts)
 
 keymap("n", "<leader>v", ":vsp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "<leader>s", ":sp <CR>:lua vim.lsp.buf.definition()<CR>", opts)
+
+-- format
+keymap("n", "<space>=", ":lua vim.lsp.buf.format( { async = true } )<CR>", opts)
+keymap("n", "<leader>=", ":lua require('conform').format({})<CR>", opts)
 
 -- diagnostics
 keymap("n", "<space>[", ":lua vim.diagnostic.goto_prev()<CR>", opts)
@@ -43,9 +46,10 @@ keymap("n", "<space>]", ":lua vim.diagnostic.goto_next()<CR>", opts)
 keymap("n", "<space>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 keymap("n", "<space>q", ":Telescope diagnostics<CR>", opts)
 
--- floaterm
+-- FTerm
 keymap("n", "<C-j>", ":lua require('FTerm').toggle()<CR>", opts)
 keymap("t", "<C-j>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 
 -- nvim-tree
 keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
@@ -53,4 +57,7 @@ keymap("n", "\\", ":NvimTreeToggle<CR>", opts)
 -- replace world under the cursor
 keymap("n", "<leader>j", "*``cgn", opts)
 
-keymap("t", "<ESC>", "<C-\\><C-n>", opts)
+-- runner
+vim.cmd("au FileType go nnoremap <leader>r :lua require('FTerm').run({'go', 'run', vim.api.nvim_buf_get_name(0)})<CR>")
+vim.cmd("au FileType python nnoremap <leader>r :lua require('FTerm').run({'python', vim.api.nvim_buf_get_name(0)})<CR>")
+vim.cmd("au FileType rust nnoremap <leader>r :RustRun<CR>")

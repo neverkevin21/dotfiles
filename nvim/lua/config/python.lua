@@ -22,28 +22,8 @@ lspconfig.pylsp.setup({
                     cache_config = true,
                     -- preview = true,
                 },
-                yapf = { enabled = false },
-                autopep8 = { enabled = false },
-                -- import sorting
                 isort = { enabled = true },
                 -- linter options
-                flake8 = {
-                    enabled = false,
-                    maxLineLength = maxLineLength,
-                    ignore = {},
-                },
-                pyflakes = {
-                    enabled = false,
-                },
-                pycodestyle = { enabled = false },
-                -- type checker
-                pylsp_mypy = { enabled = true },
-                -- auto-completion options
-                jedi_completion = { fuzzy = true },
-                jedi_hover = { enabled = true },
-                jedi_references = { enabled = true },
-                jedi_signature_help = { enabled = true },
-                jedi_symbols = { enabled = true, all_scopes = true },
                 ruff = {
                     enabled = true,
                     formatEnabled = true,
@@ -52,6 +32,13 @@ lspconfig.pylsp.setup({
                     format = { "I", "S", "E", "W", "F", "B", "SIM", "FAST", "PL", "G", "T20", },
                     ignore = { "SIM110", "F401", "PLR2004", "SIM103" },
                 },
+                pylsp_mypy = { enabled = true },
+                -- auto-completion options
+                jedi_completion = { fuzzy = true },
+                jedi_hover = { enabled = true },
+                jedi_references = { enabled = true },
+                jedi_signature_help = { enabled = true },
+                jedi_symbols = { enabled = true, all_scopes = true },
             },
         },
     },
