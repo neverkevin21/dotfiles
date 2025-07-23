@@ -28,8 +28,3 @@ vim.cmd("au FileType vue setlocal ts=2 sts=2 sw=2 expandtab")
 vim.cmd("au FileType js setlocal ts=2 sts=2 sw=2 expandtab")
 vim.cmd("au FileType html setlocal ts=2 sts=2 sw=2 expandtab")
 vim.cmd("au FileType ts setlocal ts=2 sts=2 sw=2 expandtab")
-
--- auto import on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
-
-local python_augroup = vim.api.nvim_create_augroup("PythonExecutionCommands", { clear = true })

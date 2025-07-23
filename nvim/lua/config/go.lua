@@ -28,6 +28,8 @@ lspconfig.gopls.setup {
     }
 }
 
+-- auto import on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 
 require('go').setup({
     disable_defaults = false, -- true|false when true set false to all boolean settings and replace all tables
