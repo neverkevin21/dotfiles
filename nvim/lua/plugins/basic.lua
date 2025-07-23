@@ -4,16 +4,6 @@ return {
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
 	{
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
@@ -265,24 +255,6 @@ return {
 		"numToStr/FTerm.nvim",
 	},
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000,
-		config = true,
-		opts = {
-			rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-		},
-	},
-	{
-		"rest-nvim/rest.nvim",
-		ft = "http",
-		dependencies = { "luarocks.nvim" },
-		config = function()
-			require("rest-nvim").setup()
-			-- first load extension
-			require("telescope").load_extension("rest")
-		end,
-	},
-	{
 		"NeogitOrg/neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- required
@@ -312,7 +284,8 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
-		"stevearc/dressing.nvim",
+		"folke/snacks.nvim",
+		-- "stevearc/dressing.nvim",
 	},
 	{
 		"mistricky/codesnap.nvim",
@@ -334,16 +307,6 @@ return {
 				has_line_number = true,
 			})
 		end,
-	},
-	{
-		"echasnovski/mini.splitjoin",
-		version = "*",
-		config = function()
-			require("mini.splitjoin").setup()
-		end,
-	},
-	{
-		"skywind3000/asyncrun.vim",
 	},
 	{
 		"olimorris/codecompanion.nvim",

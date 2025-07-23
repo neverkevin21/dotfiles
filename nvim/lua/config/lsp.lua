@@ -19,7 +19,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     ensure_installed = {
         "pylsp",
-        "tsserver",
+        "ts_ls",
         "html",
     },
 })
@@ -37,7 +37,7 @@ for _, ls in ipairs(servers) do
     })
 end
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach()
