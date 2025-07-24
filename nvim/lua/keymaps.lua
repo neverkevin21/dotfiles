@@ -8,6 +8,8 @@ local keymap = vim.keymap.set
 keymap("v", '"+y', ":w !pbcopy<CR>", opts)
 keymap("n", '"+p', ":r !pbpaste<CR>", opts)
 
+keymap("n", "<C-s>", ":w<CR>")
+
 -- better indenting
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
